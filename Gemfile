@@ -41,8 +41,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
-gem 'geocoder'
-gem 'gmaps4rails'
+gem 'gon'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -52,4 +51,3 @@ gem 'coffee-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'gon'
