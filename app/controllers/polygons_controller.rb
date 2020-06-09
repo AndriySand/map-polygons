@@ -2,6 +2,6 @@
 
 class PolygonsController < ApplicationController
   def index
-    gon.polygons = Polygon.all.map(&:coordinates)
+    gon.polygons = Polygon.all.pluck(:coordinates)
   end
 end
