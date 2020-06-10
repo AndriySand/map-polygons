@@ -10,17 +10,23 @@ $(function (){
     drawingControl: true,
     drawingControlOptions: {
       position: google.maps.ControlPosition.TOP_CENTER,
-      drawingModes: [
-        google.maps.drawing.OverlayType.MARKER,
-        google.maps.drawing.OverlayType.CIRCLE,
-        google.maps.drawing.OverlayType.POLYGON,
-        google.maps.drawing.OverlayType.POLYLINE,
-        google.maps.drawing.OverlayType.RECTANGLE
-      ]
-    },
-    markerOptions: {
-      icon: "/assets/icon.png"
+      drawingModes: [ 'marker', 'circle', 'polygon', 'polyline', 'rectangle' ]
     }
+  });
+  drawingManager.addListener('polygoncomplete', function (polygon) {
+    vertices = polygon.getPath();
+    coors = []
+    for (var i =0; i < vertices.getLength(); i++) {
+      var xy = vertices.getAt(i);
+      coors.push({lat: xy.lat(), lng: xy.lng()})
+    }
+    $.ajax({
+      url: 'polygons',
+      type: 'POST',
+      data: {polygon: {coordinates: JSON.stringify(coors)}},
+      success: function(data){alert(data)},
+      error: function(data){alert(data)}
+    });
   });
   drawingManager.setMap(map);
 

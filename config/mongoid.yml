@@ -166,7 +166,7 @@ test:
 production:
   clients:
     default:
-     uri: mongodb://heroku_1rlzzr46:jhau35pgqpkvn9j7po5k9orvcs@ds149960.mlab.com:49960/heroku_1rlzzr46
+     uri: mongodb://heroku_1rlzzr46:jhau35pgqpkvn9j7po5k9orvcs@ds149960.mlab.com:49960/heroku_1rlzzr46?retryWrites=false
 
      options:
        connect_timeout: 15
