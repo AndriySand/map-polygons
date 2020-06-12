@@ -39,4 +39,18 @@ $(function (){
     fillOpacity: 0.35
   });
   polygons.setMap(map);
+
+  div = $('#purge-all-polygons')[0]
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(div);
+  div.addEventListener('click', function() {
+    if (confirm('Do you want to purge all polygons?')) {
+      polygons.setMap(null);
+      this.style ='display:none'
+      $.ajax({
+        url: 'polygons/purge_all',
+        type: 'DELETE',
+        success: function(data){alert(data)}
+      });
+    }
+  });
 });

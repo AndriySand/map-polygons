@@ -14,6 +14,11 @@ class PolygonsController < ApplicationController
     end
   end
 
+  def purge_all
+    Polygon.delete_all
+    render plain: 'All polygons were purged'
+  end
+
   private
 
   def polygon_params
