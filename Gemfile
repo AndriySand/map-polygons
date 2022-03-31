@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.0'
 gem 'mongoid', '~> 7.0.5'
 gem 'bson_ext'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
